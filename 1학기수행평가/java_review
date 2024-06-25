@@ -1,0 +1,154 @@
+//자바 수행 평가 준비를 위해 총정리를 해 봅시다 ㅠㅠㅠㅠㅠㅠ
+/* 1학기 두 번째 자바 수행 평가를 준비하며 작성한 파일입니다. 
+그저 제가 모든 내용을 알고 있는지 확인하기 위해 노트 필기 한 것과 같습니다. */
+
+import java.util.Arrays;		//배열을 오름차순 정렬합니다
+import java.util.Scanner;		//스캐너를 생성해 유저에게 입력을 받습니다
+
+public class Main{
+	public static void main(String args []){
+		Scanner sc=new Scanner(System.in)
+
+변수 선언 방법
+boolean bool = true or false;
+char ch = ' ';
+byte bt = -128 ~ 127;
+short st = -32768 ~ 32767;
+int it = -2147483648 ~ 2147483647;
+long lg = -9,223,372,036,854,775,808L ~ 9,223,372,036,854,775,807L; // L을 명시적으로 붙여야 합니다
+float ft = -3.4x10^38F ~ 3.4x10^38F; // F를 명시적으로 붙여야 합니다
+double dob = -1.7x10^308 ~ 1.7x10^308;
+String str = " ";
+
+-------------------------------------
+
+자동 형변환
+byte -> short || char -> int -> long -> float -> double
+
+--------------------------------------
+
+상수 선언 방법
+final 자료형 = 값;
+
+--------------------------------------
+
+Scanner 입력
+System.out.print("scanner 입력 받기");
+int a=sc.nextInt();				//int형 변수를 입력 받습니다
+double b=sc.nextDouble();		//double형 변수를 입력 받습니다
+char c=sc.next().chatAt(0);		//char형 변수를 입력 받습니다
+String d=sc.nextLine();			//string형 변수를 입력 받습니다
+//	or sc.next();도 가능은 함
+sc.nextLine();				//입력이 씹혔을 때 임시로 넣어 사용합니다
+
+----------------------------------------
+
+swich(조건식)
+	case 1: 실행문; break;
+	case 2: 실행문; break;
+	case 3: 실행문; break;
+	default: 실행문; break;
+
+while(조건식){
+	실행문;
+	}
+	// 조건식 테스트는 T/F로 이루어집니다
+	// 조건식이 true면 실행문을 실행합니다
+	// 처음부터 조건식이 false면 한 번도 반복되지 않고 while문을 빠져나가게 됩니다
+
+do{
+	실행문;
+} while(조건식)
+	//조건식을 테스트하기 전에 실행문을 실행하므로, 한 번은 반드시 실행됩니다
+
+--------------------------------------------
+
+배열 선언
+
+int[] a=new int[];
+int[][] score = new int[][];
+String[] sub_name={"국어", "영어", "수학", "자바"};
+// 이것도 가능 ㅎㅎ ㅠ
+
+---------------------------------------------
+
+배열 정렬 방법
+for(int i = 0; i < arr.length-1; i++) {
+    for(int j = i + 1; j < arr.length; j++) {
+        if (arr[i] > arr[j]) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+
+---------------------------------------------
+
+메소드 사용 방법
+public class Main {
+    public static void main(String[] args) {
+        int num = 0;
+        System.out.print(num); // 0
+        num = sum(num); // num변수에 sum(num)을 보내고 return받은 값을 저장
+        System.out.print(num); // 1
+    }
+    public static int sum(int num) { // static 뒤에 int가 붙는 이유는 return타입이 int형이여서
+        return num++;
+    }
+
+}
+
+여기서 System.out.print(num)이 반복되니 메소드 화 시키기
+public class Main {
+    public static void main(String[] args) {
+        print(num); // 0
+        num = sum(num); // num변수에 sum(num)을 보내고 return받은 값을 저장
+        print(num); // 1
+    }
+    public static int sum(int num) {
+        return num++;
+    }
+    public static void print(int num) { // static 뒤에 void가 붙는 이유는 return타입이 없기 때문
+        System.out.print(num);
+    }
+}
+		*
+		**
+		***
+		****
+		*****
+		for(int i=1; i<=5; i++) {
+			for(int j=1; j<=i; j++)
+				System.out.print("*");
+			System.out.print("\n");
+		}
+
+		*****
+		****
+		***
+		**
+		*
+		for(int i=5; i>=1; i--) {
+			for(int j=1; j<=i; j++)
+				System.out.print("*");
+			System.out.print("\n");
+		}
+
+		*****
+		 ****
+		  ***
+		   **
+		    *
+		for( int i=5; i>=1; i--){
+			for(int j=1; j<=5-i; j++) {
+				System.out.print(" ");
+			}
+			for (int k=1; k<=i; k++) {
+				System.out.print("*");
+			}
+			System.out.println( );
+		}
+
+	}
+}
